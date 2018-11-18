@@ -1,4 +1,5 @@
 const resolve = require('path').resolve;
+const webpack = require('webpack');
 
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -42,6 +43,8 @@ module.exports = (env = {}, options = {}) => {
     parallel: true,
     sourceMap:  devMode ? true : false,
   });
+
+  const webpackHMRPlugin = new webpack.HotModuleReplacementPlugin();
   /* plagins setup end */
 
   return {
@@ -82,11 +85,14 @@ module.exports = (env = {}, options = {}) => {
     plugins: [
       htmlPlugin,
       cssPlugin,
+      webpackHMRPlugin,
     ],
     devServer: {
+      // hot: true,
       open: 'Chrome',
       index: 'index.html',
-      port: env.port || 6969
+      port: env.port || 6969,
+      watchContentBase: true,
     },
   };
 }

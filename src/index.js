@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { hot } from 'react-hot-loader';
+
 import style from "./index.scss";
 
 const Index = () => {
@@ -7,3 +9,5 @@ const Index = () => {
 };
 
 ReactDOM.render(<Index />, document.getElementById("index"));
+
+export default hot(module)(App)
