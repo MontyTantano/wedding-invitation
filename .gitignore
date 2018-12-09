@@ -3,5 +3,4 @@ npm-debug.log
 .vscode/settings.json
 .vscode
 webpack.stats.json
-dist/
 .editorconfig
