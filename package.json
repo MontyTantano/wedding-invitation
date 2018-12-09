@@ -1,12 +1,11 @@
 {
   "name": "wedding-invitation",
   "version": "0.0.1",
-  "description": "This is a simple site with an invitation to the wedding. I made it for my own experience and for fun =)",
+  "description": "This is a site with an invitation to the wedding",
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --env.port=6969",
-    "lint": "eslint ."
+    "start": "webpack-dev-server --mode development --env.port=6969"
   },
   "repository": {
     "type": "git",
@@ -25,17 +24,19 @@
     "autoprefixer": "^9.3.1",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
-    "eslint": "^5.9.0",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
-    "prettier": "^1.15.2",
+    "prettier": "^1.15.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
