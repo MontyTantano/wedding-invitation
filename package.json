@@ -1,11 +1,18 @@
 {
   "name": "wedding-invitation",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This is a site with an invitation to the wedding",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --env.port=6969"
+    "build-server": "webpack --mode production --env.configType=server",
+    "build-client": "webpack --mode production --env.configType=client",
+    "build": "npm run build-client && npm run build-server",
+    "start-dev": "webpack-dev-server --mode development --env.port=6969 --env.configType=client",
+    "start": "node dist/server.js"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "10.x"
   },
   "repository": {
     "type": "git",
@@ -18,10 +25,12 @@
   },
   "homepage": "https://github.com/MontyTantano/wedding-invitation#readme",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.3.1",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
     "eslint": "^5.10.0",
@@ -31,7 +40,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
@@ -46,8 +54,15 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "cross-fetch": "^3.0.0",
+    "express": "^4.16.4",
+    "prop-types": "^15.6.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-hot-loader": "^4.3.12"
+    "react-hot-loader": "^4.3.12",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   }
 }

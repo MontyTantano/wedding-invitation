@@ -1,11 +1,16 @@
+import '@babel/polyfill';
+
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { hot } from 'react-hot-loader';
+import { hydrate } from 'react-dom';
+import Root from './containers/Root';
 
-import style from './index.scss';
+const NODE_ENV = process && process.env && process.env.NODE_ENV;
 
-const Index = () => <div className="hellow-world">Hello World!</div>;
+const renderRoot = () => hydrate(<Root />, document.getElementById('root'));
+renderRoot();
 
-ReactDOM.render(<Index />, document.getElementById('index'));
+if (NODE_ENV !== 'production' && module.hot) {
+  renderRoot();
+}
 
-export default hot(module)(App);
+export default Root;

@@ -1,90 +1,61 @@
-const { resolve } = require('path');
 const webpack = require('webpack');
 
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const packageJson = require('./package.json');
+const configClient = require('./webpack.config.client');
+const configServer = require('./webpack.config.server');
+
+const VERSION = (packageJson.version || '').replace(/\./g, '-');
 
 module.exports = (env = {}, options = {}) => {
-  const devMode = options.mode !== 'production';
-  const sourceMap = !devMode;
-
   /* plagins setup start */
-  const htmlPlugin = new HtmlWebPackPlugin({
-    template: './src/index.html',
-    filename: './index.html'
+  const versionPlugin = new webpack.DefinePlugin({
+    VERSION
   });
 
   const cssPlugin = new MiniCssExtractPlugin({
     // Options similar to the same options in webpackOptions.output
     // both options are optional
-    filename: devMode ? '[name].css' : '[name].[hash].css',
-    chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
-  });
-
-  const optimizeCSSAssetsPlugin = new OptimizeCSSAssetsPlugin({});
-
-  const uglifyJsPlugin = new UglifyJsPlugin({
-    uglifyOptions: {
-      compress: {
-        warnings: false,
-        // Disabled because of an issue with Uglify breaking seemingly valid code:
-        // https://github.com/facebook/create-react-app/issues/2376
-        // Pending further investigation:
-        // https://github.com/mishoo/UglifyJS2/issues/2011
-        comparisons: false
-      },
-      mangle: true,
-      output: {
-        comments: false
-      }
-    },
-    cache: true,
-    parallel: true,
-    sourceMap
+    filename: `[name].${VERSION}.css`,
+    chunkFilename: `[id].${VERSION}.css`
   });
 
   const webpackHMRPlugin = new webpack.HotModuleReplacementPlugin();
+
+  const sourceMapDevToolPlugin = new webpack.SourceMapDevToolPlugin({
+    filename: '../maps/[name].js.map',
+    exclude: ['polyfills.js'],
+    append: false
+  });
   /* plagins setup end */
 
-  return {
-    entry: {
-      app: [`./src/index.js`]
-    },
-    output: {
-      path: resolve(__dirname, 'dist')
-    },
-    optimization: {
-      minimizer: [uglifyJsPlugin, optimizeCSSAssetsPlugin]
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader'
-          }
-        },
-        {
-          test: /\.(sa|sc|c)ss$/,
-          use: [
-            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader',
-            'postcss-loader',
-            'sass-loader'
-          ]
-        }
-      ]
-    },
-    plugins: [htmlPlugin, cssPlugin, webpackHMRPlugin],
-    devServer: {
-      // hot: true,
-      open: 'Chrome',
-      index: 'index.html',
-      port: env.port || 6969,
-      watchContentBase: true
-    }
-  };
+  const configType = env.configType || 'client';
+  let getConfig;
+
+  switch (configType) {
+    case 'client':
+      getConfig = configClient;
+      break;
+    case 'server':
+      getConfig = configServer;
+      break;
+    default:
+      break;
+  }
+
+  const result = getConfig({
+    mode: options.mode,
+    port: env.port,
+    projectVersion: VERSION
+  });
+
+  result.plugins = [
+    versionPlugin,
+    cssPlugin,
+    webpackHMRPlugin,
+    sourceMapDevToolPlugin
+  ];
+
+  return result;
 };
