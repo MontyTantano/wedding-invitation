@@ -7,7 +7,7 @@ module.exports = function client(opts) {
 
   return {
     target: 'node',
-    entry: { server: ['./src/server.js'] },
+    entry: { server: ['./src/server/index.js'] },
     output: {
       filename: `[name].js`,
       path: resolve(__dirname, 'dist')

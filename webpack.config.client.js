@@ -1,8 +1,10 @@
 const { resolve } = require('path');
+const webpack = require('webpack');
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = function client(opts) {
   const devMode = opts.mode !== 'production';
@@ -10,6 +12,25 @@ module.exports = function client(opts) {
   const devServerPORT = opts.port || 6969;
 
   /* plagins setup start */
+  const versionPlugin = new webpack.DefinePlugin({
+    VERSION
+  });
+
+  const cssPlugin = new MiniCssExtractPlugin({
+    // Options similar to the same options in webpackOptions.output
+    // both options are optional
+    filename: `[name].${VERSION}.css`,
+    chunkFilename: `[id].${VERSION}.css`
+  });
+
+  const webpackHMRPlugin = new webpack.HotModuleReplacementPlugin();
+
+  const sourceMapDevToolPlugin = new webpack.SourceMapDevToolPlugin({
+    filename: '../maps/[name].js.map',
+    exclude: ['polyfills.js'],
+    append: false
+  });
+
   const optimizeCSSAssetsPlugin = new OptimizeCSSAssetsPlugin({});
 
   const uglifyJsPlugin = new UglifyJsPlugin({
@@ -74,6 +95,12 @@ module.exports = function client(opts) {
         }
       ]
     },
+    plugins: [
+      versionPlugin,
+      cssPlugin,
+      webpackHMRPlugin,
+      sourceMapDevToolPlugin
+    ],
     devServer: {
       hot: true,
       open: 'Chrome',
