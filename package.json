@@ -1,6 +1,6 @@
 {
   "name": "wedding-invitation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This is a site with an invitation to the wedding",
   "private": true,
   "scripts": {
