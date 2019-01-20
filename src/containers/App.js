@@ -10,8 +10,8 @@ class App extends Component {
   render() {
     return (
       <div className="wedding-app">
-        <GreetingPhoto />
         <GreetingText />
+        <GreetingPhoto />
       </div>
     );
   }
