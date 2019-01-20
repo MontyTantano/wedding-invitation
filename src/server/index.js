@@ -23,5 +23,6 @@ function handleRender(req, res) {
 
 app
   .use('/dist', Express.static('dist'))
+  .use('/assets', Express.static('assets'))
   .get('/', handleRender)
   .listen(PORT);

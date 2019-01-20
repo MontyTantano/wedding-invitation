@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = function client(opts) {
   const devMode = opts.mode !== 'production';
@@ -12,6 +12,10 @@ module.exports = function client(opts) {
   const devServerPORT = opts.port || 6969;
 
   /* plagins setup start */
+  const htmlPlugin = new HtmlWebPackPlugin({
+    template: './src/index.html'
+  });
+
   const versionPlugin = new webpack.DefinePlugin({
     VERSION
   });
@@ -97,11 +101,13 @@ module.exports = function client(opts) {
     },
     plugins: [
       versionPlugin,
+      htmlPlugin,
       cssPlugin,
       webpackHMRPlugin,
       sourceMapDevToolPlugin
     ],
     devServer: {
+      inline: true,
       hot: true,
       open: 'Chrome',
       port: devServerPORT

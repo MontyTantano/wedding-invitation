@@ -1,4 +1,3 @@
-
 {
   "parser": "babel-eslint",
   "extends": ["airbnb", "prettier", "prettier/react"],
@@ -14,7 +13,8 @@
     "strict": 0,
     "no-underscore-dangle": 0,
     "import/imports-first": ["error", "absolute-first"],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "error",
+    "no-unused-vars": ["error", { "varsIgnorePattern": "[iI]gnored" }]
   },
   "globals": {
     "window": true,

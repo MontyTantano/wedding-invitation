@@ -1,10 +1,6 @@
 const { resolve } = require('path');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-module.exports = function client(opts) {
-  const devMode = opts.mode !== 'production';
-
+module.exports = function client() {
   return {
     target: 'node',
     entry: { server: ['./src/server/index.js'] },
@@ -34,12 +30,7 @@ module.exports = function client(opts) {
         },
         {
           test: /\.(sa|sc|c)ss$/,
-          use: [
-            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader',
-            'postcss-loader',
-            'sass-loader'
-          ]
+          use: ['css-loader', 'postcss-loader', 'sass-loader']
         }
       ]
     }

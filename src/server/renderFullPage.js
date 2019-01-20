@@ -31,11 +31,17 @@ export default function renderFullPage(html, preloadedState) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <title>Таня + Олег</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="/dist/app.${VERSION}.css">
       </head>
       <body>
-        <section id="root">${html}</section>
+        <section id="root" class='root'>${html}</section>
         <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+            /</g,
+            '\\u003c'
+          )}
         </script>
         <script src="/dist/app.${VERSION}.js"></script>
       </body>

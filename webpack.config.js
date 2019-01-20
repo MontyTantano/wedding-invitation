@@ -19,9 +19,12 @@ module.exports = (env = {}, options = {}) => {
       break;
   }
 
-  return getConfig && getConfig({
-    mode: options.mode,
-    port: env.port,
-    projectVersion: VERSION
-  });
+  return (
+    getConfig &&
+    getConfig({
+      mode: options.mode,
+      port: env.port,
+      projectVersion: VERSION
+    })
+  );
 };
