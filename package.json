@@ -7,7 +7,7 @@
     "build-server": "webpack --mode production --env.configType=server",
     "build-client": "webpack --mode production --env.configType=client",
     "build": "npm run build-client && npm run build-server",
-    "start": "npm run build && node dist/server.js",
+    "start": "node dist/server.js",
     "start-dev": "webpack-dev-server --mode development --env.port=6969 --env.configType=client"
   },
   "main": "index.js",
