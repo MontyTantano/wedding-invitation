@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = function client() {
   return {
@@ -8,6 +9,7 @@ module.exports = function client() {
       filename: `[name].js`,
       path: resolve(__dirname, 'dist')
     },
+    externals: [nodeExternals()],
     module: {
       rules: [
         {
