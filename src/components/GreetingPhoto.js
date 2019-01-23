@@ -7,7 +7,7 @@ const GreetingPhoto = () => (
       <source srcSet="assets/img/greeting-photo@1x.webp" type="image/webp" />
       <img
         className="greeting-photo-picture__img"
-        src="assets/img/greeting-photo@1x.png"
+        src="assets/img/greeting-photo@1x.jpg"
         alt="Олег и Татьяна"
       />
     </picture>

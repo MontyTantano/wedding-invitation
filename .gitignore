@@ -4,3 +4,7 @@ npm-debug.log
 .vscode
 webpack.stats.json
 .editorconfig
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
