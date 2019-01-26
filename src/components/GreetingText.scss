@@ -1,7 +1,13 @@
 .greeting-text {
   font-family: 'Lobster', cursive;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 28px;
   margin: 0px;
   margin-top: 25px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .greeting-text {
+    font-size: 45px;
+  }
 }

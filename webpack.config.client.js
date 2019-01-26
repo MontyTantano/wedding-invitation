@@ -94,7 +94,13 @@ module.exports = function client(opts) {
             devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
             'postcss-loader',
-            'sass-loader'
+            {
+              loader: 'sass-loader',
+              options: {
+                data: '@import "constants.scss";',
+                includePaths: [__dirname, 'src']
+              }
+            }
           ]
         }
       ]

@@ -32,7 +32,17 @@ module.exports = function client() {
         },
         {
           test: /\.(sa|sc|c)ss$/,
-          use: ['css-loader', 'postcss-loader', 'sass-loader']
+          use: [
+            'css-loader',
+            'postcss-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                data: '@import "constants";',
+                includePaths: [resolve(__dirname, './src')]
+              }
+            }
+          ]
         }
       ]
     }

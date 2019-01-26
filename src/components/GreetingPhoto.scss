@@ -1,9 +1,11 @@
 .greeting-photo,
-.greeting-photo-picture {
-  position: relative;
-  height: 800px;
+.greeting-photo-picture__img {
+  max-width: 320px;
 }
 
-.greeting-photo-picture__img {
-  height: 800px;
+@media (min-width: $breakpoint-tablet) {
+  .greeting-photo,
+  .greeting-photo-picture__img {
+    max-width: 500px;
+  }
 }
