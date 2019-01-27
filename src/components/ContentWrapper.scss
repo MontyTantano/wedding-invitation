@@ -1,0 +1,14 @@
+.content-wrapper {
+  width: $layout-width;
+  margin-top: 25px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .content-wrapper {
+    width: $layout-width-tablet;
+  }
+}
+
+.content-wrapper-title {
+  font-family: $font-family-title;
+}

@@ -1,11 +1,11 @@
 .greeting-photo,
 .greeting-photo-picture__img {
-  max-width: 320px;
+  max-width: $layout-width;
 }
 
 @media (min-width: $breakpoint-tablet) {
   .greeting-photo,
   .greeting-photo-picture__img {
-    max-width: 500px;
+    max-width: $layout-width-tablet;
   }
 }

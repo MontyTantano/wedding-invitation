@@ -1,8 +1,6 @@
 import React from 'react';
 import GreetingTextStyleIgnored from './GreetingText.scss';
 
-const GreetingText = () => (
-  <h1 className="greeting-text">Свадьба Олега и Татьяны</h1>
-);
+const GreetingText = ({ text }) => <h1 className="greeting-text">{text}</h1>;
 
 export default GreetingText;

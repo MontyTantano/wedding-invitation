@@ -32,7 +32,7 @@ export default function renderFullPage(html, preloadedState) {
         <title>Таня + Олег</title>
 
         <link rel="shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
-        <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Cormorant+Infant:700i&amp;subset=cyrillic" rel="stylesheet" />
         <link rel="stylesheet" href="/dist/app.${VERSION}.css" />
       </head>
       <body>

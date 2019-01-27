@@ -63,6 +63,7 @@
     "react-dom": "^16.6.1",
     "react-hot-loader": "^4.3.12",
     "react-redux": "^6.0.0",
+    "react-yandex-maps": "^3.0.2",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   }
