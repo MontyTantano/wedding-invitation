@@ -1,11 +1,12 @@
 .content-wrapper {
   width: $layout-width;
-  margin-top: 25px;
+  margin-top: 24px;
 }
 
 @media (min-width: $breakpoint-tablet) {
   .content-wrapper {
     width: $layout-width-tablet;
+    margin-top: 50px;
   }
 }
 
