@@ -1,4 +1,4 @@
-export const getPluralized = ({ count, one, two, five }) => {
+export const pluralizing = ({ count, one, two, five }) => {
   let number = Math.abs(count);
   number %= 100;
   if (number >= 5 && number <= 20) {
@@ -21,4 +21,7 @@ export const newid = (prefix = 'id') => {
   return `${prefix}${lastId}`;
 };
 
-export default getPluralized;
+export default {
+  pluralizing,
+  newid
+};

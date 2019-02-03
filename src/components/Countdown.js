@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { getPluralized } from '../utils';
+import { pluralizing } from '../utils';
 import CountdownStyleIgnored from './Countdown.scss';
 
 const addLeadingZeros = value => {
@@ -94,7 +94,7 @@ class Countdown extends Component {
             {addLeadingZeros(countDown.days)}
           </div>
           <div className="countdown-item__text">
-            {getPluralized({
+            {pluralizing({
               count: countDown.days,
               one: 'День',
               two: 'Дня',
@@ -108,7 +108,7 @@ class Countdown extends Component {
             {addLeadingZeros(countDown.hours)}
           </div>
           <div className="countdown-item__text">
-            {getPluralized({
+            {pluralizing({
               count: countDown.hours,
               one: 'Час',
               two: 'Часа',
@@ -122,7 +122,7 @@ class Countdown extends Component {
             {addLeadingZeros(countDown.min)}
           </div>
           <div className="countdown-item__text">
-            {getPluralized({
+            {pluralizing({
               count: countDown.min,
               one: 'Минута',
               two: 'Минуты',
@@ -136,7 +136,7 @@ class Countdown extends Component {
             {addLeadingZeros(countDown.sec)}
           </div>
           <div className="countdown-item__text">
-            {getPluralized({
+            {pluralizing({
               count: countDown.sec,
               one: 'Секунда',
               two: 'Секунды',
