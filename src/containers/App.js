@@ -19,11 +19,11 @@ class App extends Component {
         <GreetingText texts={Constants.GREETING_TEXTS} />
         <GreetingPhoto />
         <Countdown date={Constants.EVENT_DATE} />
-        <ContentWrapper>
+        <ContentWrapper title={Constants.BASE_TEXT_TITLE}>
           <ContentText text={Constants.BASE_TEXT_DATE} />
           <ContentText text={Constants.BASE_TEXT_ADDRESS} />
         </ContentWrapper>
-        <ContentWrapper>
+        <ContentWrapper title={Constants.EVENT_LOCATION_TITLE}>
           <EventLocationMap />
         </ContentWrapper>
       </div>
