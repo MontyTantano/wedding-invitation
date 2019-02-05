@@ -31,4 +31,12 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+function mapStateToProps(state) {
+  const { isFormSended } = state;
+
+  return {
+    isFormSended,
+  };
+}
+
+export default connect(mapStateToProps)(App);
