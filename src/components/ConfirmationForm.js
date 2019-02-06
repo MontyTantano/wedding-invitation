@@ -15,9 +15,9 @@ class ConfirmationForm extends Component {
 
   render() {
     return (
-      <div className="confirmation-form">
+      <form className="confirmation-form">
         <button type="button" onClick={this.handleSubmite} />
-      </div>
+      </form>
     );
   }
 }

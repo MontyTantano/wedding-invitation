@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ContentWrapperStyleIgnored from './ContentWrapper.scss';
 
 const ContentWrapper = ({ children, title }) => {
@@ -11,6 +12,14 @@ const ContentWrapper = ({ children, title }) => {
       {children}
     </div>
   );
+};
+
+ContentWrapper.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
 };
 
 export default ContentWrapper;
