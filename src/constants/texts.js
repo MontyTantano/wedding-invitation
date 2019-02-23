@@ -6,6 +6,7 @@ const BASE_TEXT_ADDRESS =
   'Она пройдет в Усадьбе Галициных, по адресу Ростов-на-Дону, Левобережная улица 3а.';
 const EVENT_DATE = '2019-05-10T16:00:00';
 const EVENT_LOCATION_TITLE = 'Схема проезда';
+const CONFIRMATION_FORM_TITLE = 'Подтверждение';
 
 export default {
   GREETING_TEXTS,
@@ -14,4 +15,5 @@ export default {
   BASE_TEXT_TITLE,
   EVENT_DATE,
   EVENT_LOCATION_TITLE,
+  CONFIRMATION_FORM_TITLE
 };

@@ -1,12 +1,12 @@
+import { fetch } from 'cross-fetch';
 import Constants from './constants/actions';
-// import fetch from 'cross-fetch';
 
 function formIsSended() {
   return {
     type: Constants.SENDED_CONFIRMATION_FORM,
     payload: {
-      isSended: true,
-    },
+      isSended: true
+    }
   };
 }
 
@@ -14,77 +14,78 @@ function formIsReceived() {
   return {
     type: Constants.RECEIVED_CONFIRMATION_FORM,
     payload: {
-      isReceived: true,
-    },
+      isReceived: true
+    }
   };
 }
 
 function sendForm(formJSON) {
-  return dispatch => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(dispatch(formIsReceived()))
-      }, 1000);
-    });
-  };
+  return dispatch =>
+    fetch('/form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formJSON)
+    }).then(() => dispatch(formIsReceived()));
 }
 
 export function changeCountdown(countdown = {}) {
   return {
     type: Constants.CHANGE_COUNTDOWN,
     payload: {
-      ...countdown,
+      ...countdown
     }
-  }
+  };
 }
 
 export function removeConfirmationFormItem(id = '') {
   return {
     type: Constants.REMOVE_CONFIRMATION_FORM_ITEM,
     payload: {
-      id,
+      id
     }
-  }
+  };
 }
 
 export function changeConfirmationFormItem(changedItem = {}) {
   return {
     type: Constants.CHANGE_CONFIRMATION_FORM_ITEM,
     payload: {
-      ...changedItem,
+      ...changedItem
     }
-  }
+  };
 }
 
 export function addConfirmationFormItem(newItem = {}) {
   return {
     type: Constants.ADD_CONFIRMATION_FORM_ITEM,
     payload: {
-      ...newItem,
+      ...newItem
     }
-  }
+  };
 }
 
-export function confirmationFormChange(fio = '') {
+export function changeConfirmationForm(fio = '') {
   return {
     type: Constants.CHANGE_CONFIRMATION_FORM,
     payload: {
-      fio,
+      fio
     }
-  }
+  };
 }
 
 export function validateConfirmationForm(isValid) {
   return {
     type: Constants.VALIDATE_CONFIRMATION_FORM,
     payload: {
-      isValid,
+      isValid
     }
   };
 }
 
 export function sendConfirmationForm(formJSON = {}) {
-  return (dispatch) => {
+  return dispatch => {
     dispatch(formIsSended());
     return dispatch(sendForm(formJSON));
   };

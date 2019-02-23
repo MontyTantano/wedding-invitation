@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { YMaps, Map, GeoObject } from 'react-yandex-maps';
 import EventLocationMapStyleIgnored from './EventLocationMap.scss';
 
-const mapState = {
-  center: [47.21731, 39.808958],
+const defaultState = {
+  point: [47.21731, 39.808958],
+  center: [47.217296, 39.808351],
   zoom: 17,
   controls: ['zoomControl', 'fullscreenControl']
 };
@@ -35,14 +36,14 @@ class EventLocationMap extends Component {
       <div className="event-location-map">
         <YMaps>
           <Map
-            defaultState={mapState}
+            defaultState={defaultState}
             instanceRef={instanceRef}
             modules={['control.ZoomControl', 'control.FullscreenControl']}
           >
             <GeoObject
               geometry={{
                 type: 'Point',
-                coordinates: mapState.center
+                coordinates: defaultState.point
               }}
               properties={{
                 iconContent: 'Усадьба Голициных'

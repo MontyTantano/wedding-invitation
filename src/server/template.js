@@ -2,7 +2,7 @@ import packageJson from '../../package.json';
 
 const VERSION = (packageJson.version || '').replace(/\./g, '-');
 
-export default function renderFullPage(html, preloadedState) {
+export default function template(html, preloadedState) {
   // WARNING: See the following for security issues around embedding JSON in HTML:
   // http://redux.js.org/recipes/ServerRendering.html#security-considerations
   return `

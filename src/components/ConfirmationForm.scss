@@ -1,0 +1,116 @@
+$confirmation-form-item_height: 34px;
+.confirmation-form {
+}
+
+.confirmation-form-input {
+  box-sizing: border-box;
+  outline: none;
+  height: $confirmation-form-item_height;
+  padding: 0px 4px;
+  margin: 0px;
+  font: inherit;
+  border-radius: 2px;
+  box-shadow: none;
+  border: 2px solid $color-base3;
+  &:focus,
+  &:active {
+    border-color: $color-base5;
+  }
+}
+
+.confirmation-form-btn {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px;
+  height: $confirmation-form-item_height;
+  background-color: $color-base3;
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    background-color: $color-base2;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: default;
+      color: white;
+      background-color: $color-base4;
+    }
+  }
+}
+
+.confirmation-form-fio-input {
+  width: 100%;
+  &_invalid {
+    border-color: red;
+  }
+}
+
+.confirmation-form-info {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .confirmation-form-info {
+    font-size: 24px;
+  }
+}
+
+.confirmation-form-invalid-info {
+  margin-bottom: 4px;
+  color: red;
+}
+
+.confirmation-form-fio-input + .confirmation-form-btn {
+  margin-top: 4px;
+}
+
+.confirmation-form-item {
+  margin: 4px 0px;
+  display: grid;
+  grid-template: 'inp inp inp del' 'ad ad ch ch';
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 70px 1fr 1fr 70px; // row-gap: 2px;
+  column-gap: 4px;
+  row-gap: 4px;
+  &__fio-input {
+    grid-area: inp;
+  }
+  &__btn-delete {
+    grid-area: del;
+  }
+  &__btn-adult {
+    grid-area: ad;
+  }
+  &__btn-child {
+    grid-area: ch;
+  }
+}
+
+.confirmation-form-item__btn_active {
+  background-color: $color-base2;
+  color: white;
+}
+
+.confirmation-form-btn {
+  &-add {
+    width: 100%;
+  }
+  &-submite {
+    width: 100%;
+  }
+  &-add + &-submite {
+    margin-top: 4px;
+  }
+}

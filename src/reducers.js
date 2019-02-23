@@ -7,9 +7,10 @@ function addFormItem(state, action) {
     items: [
       ...state.items,
       {
-        ...action.payload,
-      },
-    ],
+        isAdult: true,
+        ...action.payload
+      }
+    ]
   };
 }
 
@@ -19,34 +20,35 @@ function removeFormItem(state, action) {
     items: state.items.reduce((res, item) => {
       if (item.id !== action.payload.id) {
         res.push({
-          ...item,
+          ...item
         });
       }
       return res;
-    }, []),
+    }, [])
   };
 }
 
 function changeFormItem(state, action) {
   return {
     ...state,
-    items: state.items.map((item) => {
+    items: state.items.map(item => {
       if (item.id === action.payload.id) {
         return {
-          ...action.payload,
+          ...item,
+          ...action.payload
         };
       }
       return {
-        ...item,
+        ...item
       };
-    }),
-  }
+    })
+  };
 }
 
 function updateFromPayload(state, action) {
   return {
     ...state,
-    ...action.payload,
+    ...action.payload
   };
 }
 
@@ -56,7 +58,7 @@ function form(
     isSended: false,
     isValid: true,
     fio: '',
-    items: [],
+    items: []
   },
   action
 ) {
@@ -70,6 +72,7 @@ function form(
     case Constants.RECEIVED_CONFIRMATION_FORM:
     case Constants.SENDED_CONFIRMATION_FORM:
     case Constants.VALIDATE_CONFIRMATION_FORM:
+    case Constants.CHANGE_CONFIRMATION_FORM:
       return updateFromPayload(state, action);
     default:
       return state;
@@ -81,7 +84,7 @@ function countdown(
     days: 0,
     hours: 0,
     min: 0,
-    sec: 0,
+    sec: 0
   },
   action
 ) {
@@ -95,7 +98,7 @@ function countdown(
 
 const rootReducer = combineReducers({
   form,
-  countdown,
+  countdown
 });
 
 export default rootReducer;
