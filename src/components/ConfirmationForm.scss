@@ -1,6 +1,5 @@
 $confirmation-form-item_height: 34px;
-.confirmation-form {
-}
+.confirmation-form {}
 
 .confirmation-form-input {
   box-sizing: border-box;
@@ -72,7 +71,7 @@ $confirmation-form-item_height: 34px;
   color: red;
 }
 
-.confirmation-form-fio-input + .confirmation-form-btn {
+.confirmation-form-fio-input+.confirmation-form-btn {
   margin-top: 4px;
 }
 
@@ -110,7 +109,7 @@ $confirmation-form-item_height: 34px;
   &-submite {
     width: 100%;
   }
-  &-add + &-submite {
+  &-add+&-submite {
     margin-top: 4px;
   }
 }

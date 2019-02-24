@@ -2,7 +2,7 @@ import React from 'react';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import nodeMailer from 'nodemailer';
+import sendgrid from 'sendgrid';
 
 import configureStore from '../configureStore';
 import App from '../containers/App';
@@ -14,6 +14,7 @@ import mailTemplate from './mailTemplate';
 
 const PORT = process.env.PORT || 5000;
 const app = express();
+const sgClient = sendgrid(process.env.SENDGRID_API_KEY);
 
 function handleRender(req, res) {
   const countdown = calculateCountdown(Constants.EVENT_DATE);
@@ -36,27 +37,35 @@ function handleRender(req, res) {
 
 function handleFormPost(req, res) {
   const form = req.body;
-  const transporter = nodeMailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'makushev.o.k@gmail.com',
-      pass: '3Obkpobu40236'
+  const sgEmptyRequest = sgClient.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: {
+      personalizations: [
+        {
+          to: [
+            {
+              email: 'makushev.o.k@yandex.ru'
+            }
+          ],
+          subject: 'Wedding Invitation Responce'
+        }
+      ],
+      from: {
+        email: 'makushev.o.k@gmail.com'
+      },
+      content: [
+        {
+          type: 'text/plain',
+          value: mailTemplate(form)
+        }
+      ]
     }
   });
-  const mailOptions = {
-    from: '"Makushev Oleg" <makushev.o.k@gmail.com>',
-    to: 'makushev.o.k@yandex.ru',
-    subject: 'Wedding Invitation Response',
-    text: mailTemplate(form)
-  };
-  transporter.sendMail(mailOptions, error => {
-    if (error) {
-      res.status(400).send({ success: false });
-    } else {
-      res.status(200).send({ success: true });
-    }
-  });
-  res.send(req.body);
+  sgClient
+    .API(sgEmptyRequest)
+    .then(() => res.status(200).send({ success: true }))
+    .catch(() => res.status(400).send({ success: false }));
 }
 
 app
