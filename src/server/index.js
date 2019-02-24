@@ -46,9 +46,12 @@ function handleFormPost(req, res) {
           to: [
             {
               email: 'makushev.o.k@yandex.ru'
+            },
+            {
+              email: 'tanaka.danilova@gmail.ru'
             }
           ],
-          subject: 'Wedding Invitation Responce'
+          subject: `Свадьба. Подтверждение от ${form.fio}`
         }
       ],
       from: {

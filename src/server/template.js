@@ -32,7 +32,7 @@ export default function template(html, preloadedState) {
         <title>Таня + Олег</title>
 
         <link rel="shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
-        <link href="https://fonts.googleapis.com/css?family=Lobster|Cormorant+Infant:700i&amp;subset=cyrillic" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Alice|Lobster" rel="stylesheet">
         <link rel="stylesheet" href="/dist/app.${VERSION}.css" />
       </head>
       <body>

@@ -1,38 +1,23 @@
 $confirmation-form-item_height: 34px;
 .confirmation-form {}
 
-.confirmation-form-input {
-  box-sizing: border-box;
-  outline: none;
-  height: $confirmation-form-item_height;
-  padding: 0px 4px;
-  margin: 0px;
-  font: inherit;
-  border-radius: 2px;
-  box-shadow: none;
-  border: 2px solid $color-base3;
-  &:focus,
-  &:active {
-    border-color: $color-base5;
-  }
-}
-
-.confirmation-form-btn {
+@mixin bnt {
   padding: 0;
   border: none;
-  font: inherit;
+  font-family: $font-family;
+  font-size: 15px;
   color: inherit;
-  background-color: transparent;
   cursor: pointer;
   outline: none;
   border-radius: 2px;
-  height: $confirmation-form-item_height;
-  background-color: $color-base3;
+}
+
+@mixin btn-color($default, $hover, $disabled) {
+  color: $default;
   &:hover,
   &:focus,
   &:active {
-    color: white;
-    background-color: $color-base2;
+    color: $hover;
   }
   &[disabled],
   fieldset[disabled] & {
@@ -41,23 +26,83 @@ $confirmation-form-item_height: 34px;
     &:focus,
     &:active {
       cursor: default;
-      color: white;
-      background-color: $color-base4;
+      color: $disabled;
     }
+  }
+}
+
+@mixin btn-bg($default, $hover, $disabled) {
+  background-color: $default;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $hover;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: default;
+      background-color: $disabled;
+    }
+  }
+}
+
+.confirmation-form-btn {
+  height: $confirmation-form-item_height;
+  @include bnt();
+  @include btn-color($color-base6, $color-base7, $color-base7);
+  @include btn-bg($color-base3, $color-base2, $color-base4);
+  &-add,
+  &-submite {
+    width: 100%;
+  }
+  &-add+&-submite {
+    margin-top: 4px;
+  }
+}
+
+.confirmation-form-btn-add {
+  height: $confirmation-form-item_height;
+  @include bnt();
+  @include btn-color($color-base2, $color-base1, $color-base4);
+  @include btn-bg(transparent, $color-base4, $color-base4);
+}
+
+.confirmation-form-input {
+  box-sizing: border-box;
+  box-shadow: none;
+  outline: none;
+  height: $confirmation-form-item_height;
+  padding: 0px 4px;
+  margin: 0px;
+  font-family: $font-family;
+  border-radius: 2px;
+  box-shadow: none;
+  border: 2px solid $color-base3;
+  &:focus,
+  &:active {
+    border-color: $color-base5;
+  }
+  &_invalid {
+    border-color: red;
   }
 }
 
 .confirmation-form-fio-input {
   width: 100%;
-  &_invalid {
-    border-color: red;
-  }
 }
 
 .confirmation-form-info {
   width: 100%;
   text-align: center;
   font-size: 20px;
+  &_invalid {
+    margin-bottom: 4px;
+    color: red;
+  }
 }
 
 @media (min-width: $breakpoint-tablet) {
@@ -66,12 +111,7 @@ $confirmation-form-item_height: 34px;
   }
 }
 
-.confirmation-form-invalid-info {
-  margin-bottom: 4px;
-  color: red;
-}
-
-.confirmation-form-fio-input+.confirmation-form-btn {
+.confirmation-form-fio-input+.confirmation-form-btn-add {
   margin-top: 4px;
 }
 
@@ -80,7 +120,7 @@ $confirmation-form-item_height: 34px;
   display: grid;
   grid-template: 'inp inp inp del' 'ad ad ch ch';
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: 70px 1fr 1fr 70px; // row-gap: 2px;
+  grid-template-columns: 70px 1fr 1fr 70px;
   column-gap: 4px;
   row-gap: 4px;
   &__fio-input {
@@ -95,21 +135,8 @@ $confirmation-form-item_height: 34px;
   &__btn-child {
     grid-area: ch;
   }
-}
-
-.confirmation-form-item__btn_active {
-  background-color: $color-base2;
-  color: white;
-}
-
-.confirmation-form-btn {
-  &-add {
-    width: 100%;
-  }
-  &-submite {
-    width: 100%;
-  }
-  &-add+&-submite {
-    margin-top: 4px;
+  &__btn_active {
+    background-color: $color-base2;
+    color: white;
   }
 }

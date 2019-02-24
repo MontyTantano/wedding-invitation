@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import constants from '../constants/texts';
 import ConfirmationFormStyleIgnored from './ConfirmationForm.scss';
 
 const baseClassName = 'confirmation-form';
@@ -12,7 +13,7 @@ const ConfirmationFormItem = props => {
         type="text"
         className={`${baseClassName}-input ${baseClassName}-item__fio-input`}
         value={fio}
-        placeholder="Фамилия Имя и Отчество гостя..."
+        placeholder={constants.CONFIRMATION_FORM_ITEM_PLACEHOLDER}
         onChange={({ target }) => handleItemChange({ id, fio: target.value })}
       />
       <button
@@ -20,7 +21,7 @@ const ConfirmationFormItem = props => {
         onClick={() => handleItemRemove(id)}
         className={`${baseClassName}-btn ${baseClassName}-item__btn-delete`}
       >
-        Удалить
+        {constants.CONFIRMATION_FORM_ITEM_REMOVE}
       </button>
       <button
         type="button"
@@ -29,7 +30,7 @@ const ConfirmationFormItem = props => {
           isAdult ? `${baseClassName}-item__btn_active` : ''
         }`}
       >
-        Взрослый
+        {constants.CONFIRMATION_FORM_ITEM_ADULT}
       </button>
       <button
         type="button"
@@ -38,7 +39,7 @@ const ConfirmationFormItem = props => {
           !isAdult ? `${baseClassName}-item__btn_active` : ''
         }`}
       >
-        Ребенок
+        {constants.CONFIRMATION_FORM_ITEM_CHILD}
       </button>
     </div>
   );
@@ -59,20 +60,20 @@ const ConfirmationForm = props => {
   } = props;
 
   const invalidInfo = (
-    <div className={`${baseClassName}-info ${baseClassName}-invalid-info`}>
-      Проверьте корректность ввода
+    <div className={`${baseClassName}-info ${baseClassName}-info_invalid`}>
+      {constants.CONFIRMATION_FORM_INVALID_INFO}
     </div>
   );
 
   const sendedInfo = (
-    <div className={`${baseClassName}-info ${baseClassName}-sanded-info`}>
-      Подтверждение отправлено...
+    <div className={`${baseClassName}-info ${baseClassName}-info_sanded`}>
+      {constants.CONFIRMATION_FORM_SENDED_INFO}
     </div>
   );
 
   const receivedInfo = (
-    <div className={`${baseClassName}-info ${baseClassName}-received-info`}>
-      Подтверждение получено!
+    <div className={`${baseClassName}-info ${baseClassName}-info_received`}>
+      {constants.CONFIRMATION_FORM_RECEIVED_INFO}
     </div>
   );
 
@@ -93,9 +94,9 @@ const ConfirmationForm = props => {
       <input
         type="text"
         className={`${baseClassName}-input ${baseClassName}-fio-input ${
-          isValid ? '' : `${baseClassName}-fio-input_invalid`
+          isValid ? '' : `${baseClassName}-input_invalid`
         }`}
-        placeholder="Ваши Фамилия Имя и Отчество..."
+        placeholder={constants.CONFIRMATION_FORM_PLACEHOLDER}
         value={fio}
         onChange={handleFioChange}
       />
@@ -103,16 +104,16 @@ const ConfirmationForm = props => {
       <button
         type="button"
         onClick={handleItemAdd}
-        className={`${baseClassName}-btn ${baseClassName}-btn-add`}
+        className={`${baseClassName}-btn-add`}
       >
-        Добавить гостя
+        {constants.CONFIRMATION_FORM_ITEM_ADD}
       </button>
       <button
         type="button"
         onClick={handleSubmite}
         className={`${baseClassName}-btn ${baseClassName}-btn-submite`}
       >
-        Подтвердить
+        {constants.CONFIRMATION_FORM_SUBMITE}
       </button>
     </form>
   );
