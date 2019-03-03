@@ -15,16 +15,12 @@ import mailTemplate from './mailTemplate';
 const PORT = process.env.PORT || 5000;
 const app = express();
 const sgClient = sendgrid(process.env.SENDGRID_API_KEY);
+const initiaStore = {
+  countdown: calculateCountdown(Constants.EVENT_DATE)
+};
 
 function handleRender(req, res) {
-  const countdown = calculateCountdown(Constants.EVENT_DATE);
-  const store = configureStore({
-    ...(countdown
-      ? {
-          countdown
-        }
-      : {})
-  });
+  const store = configureStore(initiaStore);
   const html = renderToString(
     <Provider store={store}>
       <App />

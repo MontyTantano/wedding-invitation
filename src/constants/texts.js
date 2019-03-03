@@ -4,7 +4,7 @@ const BASE_TEXT_DATE =
   'Мы рады сообщить вам, что наша свадьба состоится 10.05.2019.';
 const BASE_TEXT_ADDRESS =
   'Она пройдет в Усадьбе Галициных, по адресу Ростов-на-Дону, Левобережная улица 3а.';
-const EVENT_DATE = '2019-05-10T16:00:00';
+const EVENT_DATE = '2019-05-10T13:00:00.000Z';
 const EVENT_LOCATION_TITLE = 'Схема проезда';
 const CONFIRMATION_FORM_TITLE = 'Подтверждение';
 const CONFIRMATION_FORM_PLACEHOLDER = 'Ваши Фамилия и Имя...';
