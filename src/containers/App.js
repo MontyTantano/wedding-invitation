@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import Countdown from './Countdown';
@@ -13,27 +13,23 @@ import ConfirmationForm from './ConfirmationForm';
 
 import AppStyleIgnored from './App.scss';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="wedding-app">
-        <GreetingText texts={Constants.GREETING_TEXTS} />
-        <GreetingPhoto />
-        <Countdown />
-        <ContentWrapper title={Constants.BASE_TEXT_TITLE}>
-          <ContentText text={Constants.BASE_TEXT_DATE} />
-          <ContentText text={Constants.BASE_TEXT_ADDRESS} />
-        </ContentWrapper>
-        <ContentWrapper title={Constants.EVENT_LOCATION_TITLE}>
-          <EventLocationMap />
-        </ContentWrapper>
-        <ContentWrapper title={Constants.CONFIRMATION_FORM_TITLE}>
-          <ConfirmationForm />
-        </ContentWrapper>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="wedding-app">
+    <GreetingText texts={Constants.GREETING_TEXTS} />
+    <GreetingPhoto />
+    <Countdown />
+    <ContentWrapper title={Constants.BASE_TEXT_TITLE}>
+      <ContentText text={Constants.BASE_TEXT_DATE} />
+      <ContentText text={Constants.BASE_TEXT_ADDRESS} />
+    </ContentWrapper>
+    <ContentWrapper title={Constants.EVENT_LOCATION_TITLE}>
+      <EventLocationMap />
+    </ContentWrapper>
+    <ContentWrapper title={Constants.CONFIRMATION_FORM_TITLE}>
+      <ConfirmationForm />
+    </ContentWrapper>
+  </div>
+);
 
 function mapStateToProps(state) {
   const { isFormSended } = state;
