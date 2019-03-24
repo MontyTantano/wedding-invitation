@@ -4,7 +4,9 @@ import ContentWrapperStyleIgnored from './ContentWrapper.scss';
 
 const ContentWrapper = ({ children, title }) => {
   const titleBlock = title && (
-    <div className="content-wrapper-title">{title}</div>
+    <div className="content-wrapper-title">
+      <span className="content-wrapper-title__text">{title}</span>
+    </div>
   );
   return (
     <div className="content-wrapper">
@@ -18,8 +20,8 @@ ContentWrapper.propTypes = {
   title: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]),
+    PropTypes.arrayOf(PropTypes.element)
+  ])
 };
 
 export default ContentWrapper;

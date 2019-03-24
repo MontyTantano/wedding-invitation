@@ -10,11 +10,11 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border: 2px solid $color-base6_200;
+  border: 2px solid $color-base3_200;
   border-radius: 50%;
 }
 
-.countdown-item + .countdown-item {
+.countdown-item+.countdown-item {
   margin-left: 8px;
 }
 
@@ -34,7 +34,7 @@
     width: 125px;
     height: 125px;
   }
-  .countdown-item + .countdown-item {
+  .countdown-item+.countdown-item {
     margin-left: 24px;
   }
   .countdown-item__count {

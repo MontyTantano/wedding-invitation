@@ -4,10 +4,22 @@ import GreetingPhotoStyleIgnored from './GreetingPhoto.scss';
 const GreetingPhoto = () => (
   <div className="greeting-photo">
     <picture className="greeting-photo-picture">
-      <source srcSet="assets/img/greeting-photo@1x.webp" type="image/webp" />
+      <source
+        srcSet="assets/img/greeting-photo-wide@1x.webp 1x"
+        media="(min-width: 768px)"
+        type="image/webp"
+      />
+      <source
+        srcSet="assets/img/greeting-photo-wide@1x.png 1x"
+        media="(min-width: 768px)"
+      />
+      <source
+        srcSet="assets/img/greeting-photo-square@1x.webp 1x"
+        type="image/webp"
+      />
       <img
         className="greeting-photo-picture__img"
-        src="assets/img/greeting-photo@1x.jpg"
+        src="assets/img/greeting-photo-square@1x.jpg 1x"
         alt="Олег и Татьяна"
       />
     </picture>

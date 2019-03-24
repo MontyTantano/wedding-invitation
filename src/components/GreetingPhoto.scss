@@ -9,3 +9,10 @@
     max-width: $layout-width-tablet;
   }
 }
+
+@media (min-width: $breakpoint-desktop) {
+  .greeting-photo,
+  .greeting-photo-picture__img {
+    max-width: $layout-width-desktop;
+  }
+}
