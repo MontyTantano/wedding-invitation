@@ -6,21 +6,36 @@ import sendgrid from 'sendgrid';
 
 import configureStore from '../configureStore';
 import App from '../containers/App';
-import Constants from '../constants/texts';
+import * as texts from '../constants/texts';
 import { calculateCountdown } from '../utils';
 
-import template from './template';
+import template from './indexTemplate';
 import mailTemplate from './mailTemplate';
+import { getGuestsStore } from './guests-dictionary';
 
 const PORT = process.env.PORT || 5000;
 const app = express();
 const sgClient = sendgrid(process.env.SENDGRID_API_KEY);
 const initiaStore = {
-  countdown: calculateCountdown(Constants.EVENT_DATE)
+  countdown: calculateCountdown(texts.EVENT_DATE)
 };
 
+function getInitiaStore({ guests }) {
+  const guestsStore = getGuestsStore(guests);
+  return {
+    isAnonymous: !guestsStore,
+    ...initiaStore,
+    ...guestsStore
+  };
+}
+
 function handleRender(req, res) {
-  const store = configureStore(initiaStore);
+  const { guests } = req.query;
+  const store = configureStore(
+    getInitiaStore({
+      guests
+    })
+  );
   const html = renderToString(
     <Provider store={store}>
       <App />
@@ -31,8 +46,7 @@ function handleRender(req, res) {
   res.send(template(html, preloadedState));
 }
 
-function handleFormPost(req, res) {
-  const form = req.body;
+function sendEmail(subject, value) {
   const sgEmptyRequest = sgClient.emptyRequest({
     method: 'POST',
     path: '/v3/mail/send',
@@ -47,7 +61,7 @@ function handleFormPost(req, res) {
               email: 'tanaka.danilova@gmail.com'
             }
           ],
-          subject: `Свадьба. Подтверждение от ${form.fio}`
+          subject
         }
       ],
       from: {
@@ -56,13 +70,27 @@ function handleFormPost(req, res) {
       content: [
         {
           type: 'text/plain',
-          value: mailTemplate(form)
+          value
         }
       ]
     }
   });
-  sgClient
-    .API(sgEmptyRequest)
+  return sgClient.API(sgEmptyRequest);
+}
+
+function handleCancelFormPost(req, res) {
+  const form = req.body;
+  sendEmail(
+    `Свадьба. Не пойдем - ${form.fio}`,
+    `(Не пойдем) ${mailTemplate(form)}`
+  )
+    .then(() => res.status(200).send({ success: true }))
+    .catch(() => res.status(400).send({ success: false }));
+}
+
+function handleFormPost(req, res) {
+  const form = req.body;
+  sendEmail(`Свадьба. Подтверждение от ${form.fio}`, mailTemplate(form))
     .then(() => res.status(200).send({ success: true }))
     .catch(() => res.status(400).send({ success: false }));
 }
@@ -73,4 +101,5 @@ app
   .use(express.json())
   .get('/', handleRender)
   .post('/form', handleFormPost)
+  .post('/form-cancel', handleCancelFormPost)
   .listen(PORT);
