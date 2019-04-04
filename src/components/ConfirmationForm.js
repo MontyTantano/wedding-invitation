@@ -72,9 +72,9 @@ const ConfirmationForm = props => {
         onClick={handleCancel}
         className={`${baseClassName}-btn-cancel`}
       >
-        {items.length === 1
-          ? texts.CONFIRMATION_FORM_CANCEL_SINGL
-          : texts.CONFIRMATION_FORM_CANCEL}
+        {items.length > 1
+          ? texts.CONFIRMATION_FORM_CANCEL
+          : texts.CONFIRMATION_FORM_CANCEL_SINGL}
       </button>
     </form>
   );
