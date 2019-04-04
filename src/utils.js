@@ -69,10 +69,3 @@ export const calculateCountdown = endDate => {
 
   return timeLeft;
 };
-
-export default {
-  pluralizing,
-  addLeadingZeros,
-  calculateCountdown,
-  newid
-};

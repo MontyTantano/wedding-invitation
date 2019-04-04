@@ -1,39 +1,50 @@
-const GREETING_TEXTS = ['Свадьба', 'Олега и Татьяны'];
-const BASE_TEXT_TITLE = 'Приглашение';
-const BASE_TEXT_DATE =
-  'Мы рады сообщить вам, что наша свадьба состоится 10.05.2019.';
-const BASE_TEXT_ADDRESS =
-  'Она пройдет в Усадьбе Галициных, по адресу Ростов-на-Дону, Левобережная улица 3а.';
-const EVENT_DATE = '2019-05-10T13:00:00.000Z';
-const EVENT_LOCATION_TITLE = 'Схема проезда';
-const CONFIRMATION_FORM_TITLE = 'Подтверждение';
-const CONFIRMATION_FORM_PLACEHOLDER = 'Ваши Фамилия и Имя...';
-const CONFIRMATION_FORM_ITEM_PLACEHOLDER = 'Фамилия и Имя гостя...';
-const CONFIRMATION_FORM_ITEM_ADD = '+ Добавить гостя';
-const CONFIRMATION_FORM_ITEM_REMOVE = 'Удалить';
-const CONFIRMATION_FORM_ITEM_ADULT = 'Взрослый';
-const CONFIRMATION_FORM_ITEM_CHILD = 'Ребенок';
-const CONFIRMATION_FORM_SUBMITE = 'Подтвердить';
-const CONFIRMATION_FORM_INVALID_INFO = 'Проверьте корректность ввода';
-const CONFIRMATION_FORM_SENDED_INFO = 'Подтверждение отправляется...';
-const CONFIRMATION_FORM_RECEIVED_INFO = 'Подтверждение получено!';
-
-export default {
-  GREETING_TEXTS,
-  BASE_TEXT_DATE,
-  BASE_TEXT_ADDRESS,
-  BASE_TEXT_TITLE,
-  EVENT_DATE,
-  EVENT_LOCATION_TITLE,
-  CONFIRMATION_FORM_PLACEHOLDER,
-  CONFIRMATION_FORM_ITEM_PLACEHOLDER,
-  CONFIRMATION_FORM_ITEM_ADD,
-  CONFIRMATION_FORM_ITEM_REMOVE,
-  CONFIRMATION_FORM_ITEM_ADULT,
-  CONFIRMATION_FORM_ITEM_CHILD,
-  CONFIRMATION_FORM_SUBMITE,
-  CONFIRMATION_FORM_INVALID_INFO,
-  CONFIRMATION_FORM_SENDED_INFO,
-  CONFIRMATION_FORM_RECEIVED_INFO,
-  CONFIRMATION_FORM_TITLE
-};
+export const GREETING_TEXTS = ['Свадьба', 'Олега и Татьяны'];
+export const BASE_TEXT_TITLE = 'Приглашение';
+export const BASE_TEXTS = [
+  'Мы рады сообщить Вам, что 10 мая состоится праздник, посвященный нашей свадьбе.',
+  'Мы от всего сердца просим Вас провести этот незабываемый день вместе с нами.',
+  'До скорой встречи!'
+];
+export const BASE_TEXT_DATE =
+  'Дорогая семья, спешим пригласить вас на торжество!';
+export const BASE_TEXT_ADDRESS =
+  'Наша свадьба состоится 10 мая 2019г. в ресторане "Усадьба Галициных", по адресу Ростов-на-Дону, Левобережная улица 3а.';
+export const EVENT_TEXT = [
+  'Свадьба пройдет в ресторане',
+  '"Усадьба Галициных",',
+  'по адресу:',
+  'г.Ростов-на-Дону,',
+  'Левобережная улица 3а,',
+  'в 17:00.'
+];
+export const EVENT_DATE = '2019-05-09T21:00:00.000Z';
+export const EVENT_LOCATION_TITLE = 'Схема проезда';
+export const CONFIRMATION_FORM_TITLE = 'Подтверждение';
+export const CONFIRMATION_FORM_PLACEHOLDER = 'Ваши Фамилия и Имя...';
+export const CONFIRMATION_FORM_ITEM_PLACEHOLDER = 'Фамилия и Имя гостя...';
+export const CONFIRMATION_FORM_ITEM_ADD = '+ Добавить гостя';
+export const CONFIRMATION_FORM_ITEM_REMOVE = 'Удалить';
+export const CONFIRMATION_FORM_ITEM_ADULT = 'Взрослый';
+export const CONFIRMATION_FORM_ITEM_CHILD = 'Ребенок';
+export const CONFIRMATION_FORM_SUBMITE = 'Подтвердить';
+export const CONFIRMATION_FORM_CANCEL = 'Не сможем пойти';
+export const CONFIRMATION_FORM_CANCEL_SINGL = 'Не смогу пойти';
+export const CONFIRMATION_FORM_INVALID_INFO = 'Проверьте корректность ввода';
+export const CONFIRMATION_FORM_SENDED_INFO = 'Подтверждение отправляется...';
+export const CONFIRMATION_FORM_RECEIVED_INFO = 'Подтверждение получено!';
+export const WISH_FOR_GIFTS_TITLE = 'Подарки';
+export const WISH_FOR_GIFTS_TEXT =
+  'Мы будем рады взять на себя хлопоты по выбору подарков.';
+export const PALETTE_TITLE = 'Дресс-код';
+export const PALETTE_TEXT =
+  'Уважаемые гости, мы будем вам очень признательны, если в своем наряде вы выберете эти оттенки.';
+export const CONTACTS_TITLE = 'Контакты';
+export const CONTACTS_PHONE_1 = '+7 915 139 52 24';
+export const CONTACTS_PHONE_1_NAME = 'Олег :';
+export const CONTACTS_PHONE_1_WHATSAPP_LINK = 'https://wa.me/79151395224';
+export const CONTACTS_PHONE_2 = '+7 938 522 23 49';
+export const CONTACTS_PHONE_2_NAME = 'Таня :';
+export const CONTACTS_PHONE_2_WHATSAPP_LINK = 'https://wa.me/79385222349';
+export const CONTACTS_PHONE_WHATSAPP_TEXT = 'WhatsApp';
+export const CONTACTS_TEXT =
+  'Если Вы затрудняетесь с ответом или у Вас есть вопросы - позвоните нам:';

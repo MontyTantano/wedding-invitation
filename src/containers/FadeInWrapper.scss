@@ -1,0 +1,14 @@
+.fade-in-wrapper {
+  opacity: 0;
+  transition: opacity 0.6s, transform 0.6s;
+
+  &_hiden {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  &_visible {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

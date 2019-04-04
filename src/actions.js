@@ -30,6 +30,17 @@ function sendForm(formJSON) {
     }).then(() => dispatch(formIsReceived()));
 }
 
+function sendCancelForm(formJSON) {
+  return dispatch =>
+    fetch('/form-cancel', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formJSON)
+    }).then(() => dispatch(formIsReceived()));
+}
+
 export function changeCountdown(countdown = {}) {
   return {
     type: Constants.CHANGE_COUNTDOWN,
@@ -84,9 +95,25 @@ export function validateConfirmationForm(isValid) {
   };
 }
 
+export function changeScrollPositionBottom(scrollPositionBottom) {
+  return {
+    type: Constants.CHANGE_SCROLL_POSITION_BOTTOM,
+    payload: {
+      scrollPositionBottom
+    }
+  };
+}
+
 export function sendConfirmationForm(formJSON = {}) {
   return dispatch => {
     dispatch(formIsSended());
     return dispatch(sendForm(formJSON));
+  };
+}
+
+export function cancelConfirmationForm(formJSON = {}) {
+  return dispatch => {
+    dispatch(formIsSended());
+    return dispatch(sendCancelForm(formJSON));
   };
 }

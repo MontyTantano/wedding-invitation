@@ -5,9 +5,10 @@ import {
   sendConfirmationForm,
   validateConfirmationForm,
   changeConfirmationForm,
-  addConfirmationFormItem,
   changeConfirmationFormItem,
-  removeConfirmationFormItem
+  removeConfirmationFormItem,
+  addConfirmationFormItem,
+  cancelConfirmationForm
 } from '../actions';
 import { newid } from '../utils';
 import ConfirmationForm from '../components/ConfirmationForm';
@@ -20,9 +21,9 @@ class ConfirmationFormContainer extends Component {
   constructor(props) {
     super(props);
     this.handleSubmite = this.handleSubmite.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
     this.handleFioChange = this.handleFioChange.bind(this);
     this.handleItemChange = this.handleItemChange.bind(this);
-    this.handleItemAdd = this.handleItemAdd.bind(this);
     this.handleItemRemove = this.handleItemRemove.bind(this);
   }
 
@@ -40,6 +41,16 @@ class ConfirmationFormContainer extends Component {
     }
   }
 
+  handleCancel() {
+    const { dispatch, fio, items } = this.props;
+    dispatch(
+      cancelConfirmationForm({
+        fio,
+        items
+      })
+    );
+  }
+
   handleFioChange(event = {}) {
     const { dispatch } = this.props;
     const fio = event.target && event.target.value;
@@ -53,15 +64,19 @@ class ConfirmationFormContainer extends Component {
     dispatch(changeConfirmationFormItem(item));
   }
 
-  handleItemAdd() {
-    const { dispatch } = this.props;
-    const id = newid();
-    dispatch(addConfirmationFormItem({ id }));
-  }
-
   handleItemRemove(id) {
     const { dispatch } = this.props;
     dispatch(removeConfirmationFormItem(id));
+  }
+
+  handleAddConfirmationFormItem() {
+    const { dispatch } = this.props;
+    dispatch(
+      addConfirmationFormItem({
+        id: newid(),
+        fio: newid()
+      })
+    );
   }
 
   render() {
@@ -69,9 +84,9 @@ class ConfirmationFormContainer extends Component {
     return (
       <ConfirmationForm
         handleSubmite={this.handleSubmite}
+        handleCancel={this.handleCancel}
         handleFioChange={this.handleFioChange}
         handleItemChange={this.handleItemChange}
-        handleItemAdd={this.handleItemAdd}
         handleItemRemove={this.handleItemRemove}
         isReceived={isReceived}
         isSended={isSended}

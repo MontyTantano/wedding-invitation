@@ -96,9 +96,29 @@ function countdown(
   }
 }
 
+function isAnonymous(state = true) {
+  return state;
+}
+
+function invitationText(state = '') {
+  return state;
+}
+
+function scrollPositionBottom(state = 0, action) {
+  switch (action.type) {
+    case Constants.CHANGE_SCROLL_POSITION_BOTTOM:
+      return action.payload.scrollPositionBottom;
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   form,
-  countdown
+  countdown,
+  isAnonymous,
+  invitationText,
+  scrollPositionBottom
 });
 
 export default rootReducer;
