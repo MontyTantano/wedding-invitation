@@ -16,6 +16,11 @@ const ContentWrapper = ({ children, title }) => {
   );
 };
 
+ContentWrapper.defaultProps = {
+  title: '',
+  children: null // or [] I guess
+};
+
 ContentWrapper.propTypes = {
   title: PropTypes.string,
   children: PropTypes.oneOfType([

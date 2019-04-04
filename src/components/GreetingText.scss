@@ -6,9 +6,10 @@
   font-family: $font-family-title;
   font-weight: normal;
   font-size: 36px;
-  margin: 0px;
-  margin-top: 24px;
+  margin: 24px 0px;
 }
+
+.greeting-text+.greeting-photo {}
 
 @media (min-width: $breakpoint-tablet) {
   .greeting-text {

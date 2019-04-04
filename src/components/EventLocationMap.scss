@@ -1,24 +1,35 @@
 .event-location-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: $layout-width;
-  background: rgb(228, 228, 228);
-  &>div,
-  & .ymaps-2-1-72-map {
-    width: 100% !important;
-    height: 100% !important;
+  margin-top: 38px;
+
+  &__ymaps {
+    width: $layout-width;
+    height: $layout-width;
+
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgb(228, 228, 228);
+
+    &>div,
+    & .ymaps-2-1-72-map {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
-  border-radius: 4px;
-  overflow: hidden;
 }
 
 @media (min-width: $breakpoint-tablet) {
   .event-location-map {
     height: $layout-width-tablet;
   }
-}
 
-@media (min-width: $breakpoint-desktop) {
-  .event-location-map {
-    height: $layout-width-desktop;
+  .event-location-map__ymaps {
+    width: $layout-width-tablet;
+    height: $layout-width-tablet;
   }
 }

@@ -34,26 +34,28 @@ class EventLocationMap extends Component {
 
     return (
       <div className="event-location-map">
-        <YMaps>
-          <Map
-            defaultState={defaultState}
-            instanceRef={instanceRef}
-            modules={['control.ZoomControl', 'control.FullscreenControl']}
-          >
-            <GeoObject
-              geometry={{
-                type: 'Point',
-                coordinates: defaultState.point
-              }}
-              properties={{
-                iconContent: 'Усадьба Голициных'
-              }}
-              options={{
-                preset: 'islands#blackStretchyIcon'
-              }}
-            />
-          </Map>
-        </YMaps>
+        <div className="event-location-map__ymaps">
+          <YMaps>
+            <Map
+              defaultState={defaultState}
+              instanceRef={instanceRef}
+              modules={['control.ZoomControl', 'control.FullscreenControl']}
+            >
+              <GeoObject
+                geometry={{
+                  type: 'Point',
+                  coordinates: defaultState.point
+                }}
+                properties={{
+                  iconContent: 'Усадьба Голициных'
+                }}
+                options={{
+                  preset: 'islands#blackStretchyIcon'
+                }}
+              />
+            </Map>
+          </YMaps>
+        </div>
       </div>
     );
   }

@@ -1,24 +1,47 @@
-$confirmation-form-item_height: 34px;
-.confirmation-form {}
+$confirmation-form-item_height: 40px;
+$confirmation-font-size: 18px;
+
+.confirmation-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: $confirmation-font-size;
+}
+
+.confirmation-form-form {
+  width: 100%;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .confirmation-form-form {
+    width: $layout-width-tablet;
+  }
+}
 
 @mixin bnt {
   padding: 0;
   border: none;
   font-family: $font-family;
-  font-size: 15px;
+  font-size: $confirmation-font-size;
   color: inherit;
   cursor: pointer;
   outline: none;
   border-radius: 2px;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px $color-base5_200;
+  }
 }
 
 @mixin btn-color($default, $hover, $disabled) {
   color: $default;
+
   &:hover,
   &:focus,
   &:active {
     color: $hover;
   }
+
   &[disabled],
   fieldset[disabled] & {
     &,
@@ -33,11 +56,13 @@ $confirmation-form-item_height: 34px;
 
 @mixin btn-bg($default, $hover, $disabled) {
   background-color: $default;
+
   &:hover,
   &:focus,
   &:active {
     background-color: $hover;
   }
+
   &[disabled],
   fieldset[disabled] & {
     &,
@@ -53,42 +78,35 @@ $confirmation-form-item_height: 34px;
 .confirmation-form-btn {
   height: $confirmation-form-item_height;
   @include bnt();
-  @include btn-color($color-base6, $color-base7, $color-base7);
-  @include btn-bg($color-base3, $color-base2, $color-base4);
+  @include btn-color($color-base1, $color-base7, $color-base7);
+  @include btn-bg($color-base3_200, $color-base3_500, $color-base4);
+
   &-add,
   &-submite {
     width: 100%;
   }
-  &-add+&-submite {
+
+  &-add + &-submite {
     margin-top: 4px;
   }
 }
 
-.confirmation-form-btn-add {
+.confirmation-form-btn-cancel {
   height: $confirmation-form-item_height;
+  width: 100%;
   @include bnt();
-  @include btn-color($color-base2, $color-base1, $color-base4);
-  @include btn-bg(transparent, $color-base4, $color-base4);
+  @include btn-color($color-base6_100, $color-base6, $color-base6);
+  @include btn-bg($color-base6_500, $color-base6_400, $color-base6_400);
 }
 
-.confirmation-form-input {
-  box-sizing: border-box;
-  box-shadow: none;
-  outline: none;
+.confirmation-form-fio-text {
+  display: flex;
+  align-items: center;
   height: $confirmation-form-item_height;
-  padding: 0px 4px;
-  margin: 0px;
   font-family: $font-family;
-  border-radius: 2px;
-  box-shadow: none;
-  border: 2px solid $color-base3;
-  &:focus,
-  &:active {
-    border-color: $color-base5;
-  }
-  &_invalid {
-    border-color: red;
-  }
+  font-size: $confirmation-font-size;
+  word-wrap: break-word;
+  box-shadow: inset 0px -2px 0px 0px $color-base3_200;
 }
 
 .confirmation-form-fio-input {
@@ -99,9 +117,10 @@ $confirmation-form-item_height: 34px;
   width: 100%;
   text-align: center;
   font-size: 20px;
+
   &_invalid {
     margin-bottom: 4px;
-    color: red;
+    color: tomato;
   }
 }
 
@@ -111,30 +130,26 @@ $confirmation-form-item_height: 34px;
   }
 }
 
-.confirmation-form-fio-input+.confirmation-form-btn-add {
-  margin-top: 4px;
+.confirmation-form-btn-submite + .confirmation-form-btn-cancel,
+.confirmation-form-fio-text + .confirmation-form-btn-submite {
+  margin-top: 12px;
 }
 
 .confirmation-form-item {
-  margin: 4px 0px;
+  margin: 12px 0px;
   display: grid;
-  grid-template: 'inp inp inp del' 'ad ad ch ch';
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: 70px 1fr 1fr 70px;
-  column-gap: 4px;
-  row-gap: 4px;
+  grid-template: 'text del';
+  grid-template-columns: 1fr 90px;
+  column-gap: 12px;
+
   &__fio-input {
-    grid-area: inp;
+    grid-area: text;
   }
+
   &__btn-delete {
     grid-area: del;
   }
-  &__btn-adult {
-    grid-area: ad;
-  }
-  &__btn-child {
-    grid-area: ch;
-  }
+
   &__btn_active {
     background-color: $color-base2;
     color: white;

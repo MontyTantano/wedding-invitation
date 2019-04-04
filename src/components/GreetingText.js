@@ -10,8 +10,12 @@ const GreetingText = ({ texts = [] }) => {
   return <h1 className="greeting-text">{rows}</h1>;
 };
 
+GreetingText.defaultProps = {
+  texts: []
+};
+
 GreetingText.propTypes = {
-  texts: PropTypes.arrayOf(PropTypes.string),
+  texts: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default GreetingText;

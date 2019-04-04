@@ -1,0 +1,81 @@
+$contacts-font-size: 26px;
+$contacts-whatsapp-size: 50px;
+
+@mixin link {
+  padding: 0px;
+  border: none;
+  font-family: $font-family;
+  font-size: $contacts-font-size;
+  color: none;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border-radius: 2px;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px $color-base5_200;
+  }
+}
+
+.contacts {
+  display: grid;
+  grid-template: 'first' 'second';
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
+  font-family: $font-family;
+  font-size: $contacts-font-size;
+
+  &__col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__col-first {
+    grid-area: first;
+  }
+
+  &__col-second {
+    grid-area: second;
+  }
+}
+
+.contacts-phone {
+  @include link();
+  width: 180px;
+  color: $color-base3_700;
+
+  &:hover,
+  &:active {
+    color: $color-base3_900;
+  }
+}
+
+.contacts-whatsapp {
+  @include link();
+  width: $contacts-whatsapp-size;
+  height: $contacts-whatsapp-size;
+  padding: 0px;
+  border-radius: 40%;
+
+  &__img {
+    width: $contacts-whatsapp-size;
+    height: $contacts-whatsapp-size;
+  }
+}
+
+.contacts-name {
+  width: 80px;
+  font-family: $font-family-title;
+  font-size: $contacts-font-size + 4px;
+}
+
+.content-text + .contacts {
+  margin-top: 40px;
+}
+
+.contacts-name + .contacts-phone,
+.contacts-phone + .contacts-whatsapp {
+  margin-left: 4px;
+}

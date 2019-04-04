@@ -1,24 +1,24 @@
+$content-wrapper-title-height: 110px;
+
 .content-wrapper {
   width: $layout-width;
   margin-top: 24px;
 }
 
 .content-wrapper-title {
-  height: 200px;
+  height: $content-wrapper-title-height;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-family: $font-family-title;
   font-size: 32px;
   text-align: center;
-  margin-bottom: 24px;
-  background: url('/assets/img/content-text-background.png');
+  margin: 20px 0px 20px 0px;
+  overflow: visible;
+  background: url('/assets/img/content-text-background-2.png');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  &__text {
-    height: 70px;
-  }
+  background-size: $layout-width - 50px $content-wrapper-title-height + 90px;
+  background-position: 50% 40%;
 }
 
 @media (min-width: $breakpoint-tablet) {
@@ -26,11 +26,12 @@
     width: $layout-width-tablet;
     margin-top: 50px;
   }
+
   .content-wrapper-title {
-    height: 200px;
+    height: $content-wrapper-title-height + 20px;
     font-size: 38px;
-    margin-bottom: 50px;
-    background-size: 40% 100%;
+    background-size: $layout-width - 20px $content-wrapper-title-height + 100px;
+    background-position: 50% 40%;
   }
 }
 
@@ -39,10 +40,11 @@
     width: $layout-width-desktop;
     margin-top: 50px;
   }
+
   .content-wrapper-title {
-    height: 200px;
+    height: $content-wrapper-title-height + 20px;
     font-size: 38px;
-    margin-bottom: 50px;
-    background-size: 40% 100%;
+    background-size: $layout-width - 20px $content-wrapper-title-height + 100px;
+    background-position: 50% 40%;
   }
 }
