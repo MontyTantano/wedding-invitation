@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
@@ -37,8 +37,8 @@ module.exports = function client(opts) {
 
   const optimizeCSSAssetsPlugin = new OptimizeCSSAssetsPlugin({});
 
-  const uglifyJsPlugin = new UglifyJsPlugin({
-    uglifyOptions: {
+  const terserPlugin = new TerserPlugin({
+    terserOptions: {
       compress: {
         warnings: false,
         // Disabled because of an issue with Uglify breaking seemingly valid code:
@@ -61,7 +61,7 @@ module.exports = function client(opts) {
   return {
     target: 'web',
     entry: { app: [`./src/index.js`] },
-    optimization: { minimizer: [uglifyJsPlugin, optimizeCSSAssetsPlugin] },
+    optimization: { minimizer: [terserPlugin, optimizeCSSAssetsPlugin] },
     output: {
       filename: `[name].${VERSION}.js`,
       path: resolve(__dirname, 'dist'),
