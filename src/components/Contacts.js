@@ -17,7 +17,7 @@ const Contacts = () => (
         {texts.CONTACTS_PHONE_1}
       </a>
       <a
-        href={`${texts.CONTACTS_PHONE_2_WHATSAPP_LINK}`}
+        href={`${texts.CONTACTS_PHONE_1_WHATSAPP_LINK}`}
         className={`${baseClass}-whatsapp`}
         target="_blanc"
       >
