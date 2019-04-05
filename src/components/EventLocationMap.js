@@ -9,12 +9,15 @@ const defaultState = {
   controls: ['zoomControl', 'fullscreenControl']
 };
 
-const instanceRef = ref => ref && ref.behaviors.disable('scrollZoom');
+const baseClass = 'event-location-map';
 
 class EventLocationMap extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true };
+    this.state = {
+      loading: true,
+      curtainDown: true
+    };
   }
 
   componentDidMount() {
@@ -22,23 +25,34 @@ class EventLocationMap extends Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, curtainDown } = this.state;
 
     if (loading) {
       return (
-        <div className="event-location-map event-location-map_loading">
-          ...Загрузка
+        <div className={`${baseClass} ${baseClass}_loading`}>
+          <div className={`${baseClass}__ymaps`}>...Загрузка</div>
         </div>
       );
     }
 
+    const curtainClasses = [
+      `${baseClass}__curtain`,
+      !curtainDown ? `${baseClass}__curtain_disable` : ''
+    ].join(' ');
+
     return (
-      <div className="event-location-map">
-        <div className="event-location-map__ymaps">
+      <div className={baseClass}>
+        <div
+          className={curtainClasses}
+          role="presentation"
+          onClick={() => this.setState({ curtainDown: false })}
+        >
+          Нажмите чтобы активировать карту
+        </div>
+        <div className={`${baseClass}__ymaps`}>
           <YMaps>
             <Map
               defaultState={defaultState}
-              instanceRef={instanceRef}
               modules={['control.ZoomControl', 'control.FullscreenControl']}
             >
               <GeoObject
