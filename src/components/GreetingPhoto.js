@@ -20,7 +20,7 @@ const GreetingPhoto = () => (
       />
       <img
         className="greeting-photo-picture__img"
-        src="assets/img/greeting-photo-square@1x.jpg 1x"
+        src="assets/img/greeting-photo-square@1x.jpg"
         alt="Олег и Татьяна"
       />
     </picture>
