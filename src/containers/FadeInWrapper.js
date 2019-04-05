@@ -21,7 +21,7 @@ class FadeInWrapper extends Component {
       return;
     }
     const rect = this.selfRef.current.getBoundingClientRect();
-    this.scrollPositionBottom = rect.top + rect.height / 2;
+    this.scrollPositionBottom = rect.top + rect.height / 10;
   }
 
   render() {
