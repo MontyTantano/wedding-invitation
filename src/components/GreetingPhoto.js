@@ -12,6 +12,7 @@ const GreetingPhoto = () => (
       <source
         srcSet="assets/img/greeting-photo-wide@1x.png 1x"
         media="(min-width: 768px)"
+        type="image/png"
       />
       <source
         srcSet="assets/img/greeting-photo-square@1x.webp 1x"
