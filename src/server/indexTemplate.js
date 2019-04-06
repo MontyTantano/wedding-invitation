@@ -29,7 +29,7 @@ export default function template(html, preloadedState) {
 
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <meta property="og:image" content="/assets/img/greeting-photo-square@1x.jpg" />
+        <meta property="og:image" content="/assets/img/ogimage.png" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Свадьба Татьяны и Олега" />
         <meta property="og:description" content="Мы рады сообщить, что 10 мая состоится праздник, посвященный нашей свадьбе." />
