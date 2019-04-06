@@ -14,7 +14,7 @@ export default function template(html, preloadedState) {
         <meta name="author" content="Oleg Makushev">
         <meta name="designer" content="Oleg Makushev">
         <meta name="publisher" content="Oleg Makushev">
-        <meta name="no-email-collection" content="https://tanya-oleg-wedding.herokuapp.com">
+        <meta name="no-email-collection" content="http://www.tatiana-oleg.ru">
 
         <meta name="description" content="This is the site of the invitation to the wedding of Tanya and Oleg">
         <meta name="keywords" content="wedding,wedding invitation,Oleg Makushev,Tatiana Danilova,Oleg + Tatiana,приглашение на свадьбу,Олег Макушев,Татьяна Данилова,Олег + Таня">
@@ -28,6 +28,11 @@ export default function template(html, preloadedState) {
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
 
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <meta property="og:image" content="/assets/img/greeting-photo-square@1x.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Свадьба Татьяны и Олега" />
+        <meta property="og:description" content="Мы рады сообщить, что 10 мая состоится праздник, посвященный нашей свадьбе." />
 
         <title>Таня + Олег</title>
 
