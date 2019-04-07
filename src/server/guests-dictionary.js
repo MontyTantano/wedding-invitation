@@ -458,7 +458,7 @@ export const Guests = {
     }
   },
   roma: {
-    invitationText: 'Дорогой Рома',
+    invitationText: 'Дорогой Рома!',
     form: {
       isReceived: false,
       isSended: false,
@@ -727,7 +727,7 @@ export const Guests = {
       fio: 'Котляров Дмитрий',
       items: [
         {
-          fio: 'Анастасия Касьянова',
+          fio: 'Касьянова Анастасия',
           isAdult: true,
           id: '59'
         }
@@ -772,7 +772,7 @@ export const Guests = {
       isReceived: false,
       isSended: false,
       isValid: true,
-      fio: 'Алексей Дородин',
+      fio: 'Алексей Бородин',
       items: []
     }
   },
