@@ -30,8 +30,8 @@ export const CONFIRMATION_FORM_SUBMITE = 'Подтвердить';
 export const CONFIRMATION_FORM_CANCEL = 'Не сможем пойти';
 export const CONFIRMATION_FORM_CANCEL_SINGL = 'Не смогу пойти';
 export const CONFIRMATION_FORM_INVALID_INFO = 'Проверьте корректность ввода';
-export const CONFIRMATION_FORM_SENDED_INFO = 'Подтверждение отправляется...';
-export const CONFIRMATION_FORM_RECEIVED_INFO = 'Подтверждение получено!';
+export const CONFIRMATION_FORM_SENDED_INFO = 'Ваш ответ отправляется...';
+export const CONFIRMATION_FORM_RECEIVED_INFO = 'Ваш ответ получен!';
 export const WISH_FOR_GIFTS_TITLE = 'Подарки';
 export const WISH_FOR_GIFTS_TEXT =
   'Мы будем рады взять на себя хлопоты по выбору подарков.';
