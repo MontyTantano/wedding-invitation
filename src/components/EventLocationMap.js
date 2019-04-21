@@ -61,7 +61,7 @@ class EventLocationMap extends Component {
                   coordinates: defaultState.point
                 }}
                 properties={{
-                  iconContent: 'Усадьба Голициных'
+                  iconContent: 'Усадьба Голицыных'
                 }}
                 options={{
                   preset: 'islands#blackStretchyIcon'

@@ -34,7 +34,7 @@ export default function template(html, preloadedState) {
         <meta property="og:title" content="Свадьба Татьяны и Олега" />
         <meta property="og:description" content="Мы рады сообщить, что 10 мая состоится праздник, посвященный нашей свадьбе." />
 
-        <title>Таня + Олег</title>
+        <title>Олег + Таня</title>
 
         <link rel="shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Alice|Lobster|IBM+Plex+Serif" rel="stylesheet">
