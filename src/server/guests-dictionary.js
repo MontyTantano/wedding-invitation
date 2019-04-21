@@ -12,7 +12,7 @@ export const Guests = {
   family: {
     invitationText: 'Дорогая семья!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Данилова Лидия',
@@ -330,7 +330,7 @@ export const Guests = {
   golybovi: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Голубов Михаил',
@@ -424,7 +424,7 @@ export const Guests = {
   dasha: {
     invitationText: 'Дорогая Даша!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Коваль Дарья',
@@ -460,7 +460,7 @@ export const Guests = {
   roma: {
     invitationText: 'Дорогой Рома!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Еремин Роман',
@@ -486,7 +486,7 @@ export const Guests = {
   alexandr: {
     invitationText: 'Дорогой Саша!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Стрельников Александр',
