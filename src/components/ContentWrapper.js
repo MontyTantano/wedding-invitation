@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ContentWrapperStyleIgnored from './ContentWrapper.scss';
 
-const ContentWrapper = ({ children, title }) => {
+const ContentWrapper = ({ children, title, url }) => {
   const titleBlock = title && (
     <div className="content-wrapper-title">
-      <span className="content-wrapper-title__text">{title}</span>
+      <img className="content-wrapper-title__img" src={url} alt={title} />
     </div>
   );
   return (
@@ -18,7 +18,8 @@ const ContentWrapper = ({ children, title }) => {
 
 ContentWrapper.defaultProps = {
   title: '',
-  children: null // or [] I guess
+  children: null, // or [] I guess
+  url: ''
 };
 
 ContentWrapper.propTypes = {
@@ -26,7 +27,8 @@ ContentWrapper.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element)
-  ])
+  ]),
+  url: PropTypes.string
 };
 
 export default ContentWrapper;

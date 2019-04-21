@@ -37,7 +37,7 @@ export default function template(html, preloadedState) {
         <title>Таня + Олег</title>
 
         <link rel="shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
-        <link href="https://fonts.googleapis.com/css?family=Alice|Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alice|Lobster|IBM+Plex+Serif" rel="stylesheet">
         <link rel="stylesheet" href="/dist/app.${VERSION}.css" />
       </head>
       <body>

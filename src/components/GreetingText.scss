@@ -1,18 +1,25 @@
 .greeting-text {
+  width: 100%;
+  margin: 0px;
+  padding: 150px 0px 0px 0px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: $font-family-title;
-  font-weight: normal;
-  font-size: 36px;
-  margin: 24px 0px;
-}
 
-.greeting-text+.greeting-photo {}
+  &__img {
+    max-width: $layout-width + 80px;
+  }
+}
 
 @media (min-width: $breakpoint-tablet) {
   .greeting-text {
-    font-size: 46px;
+    margin: 0px;
+    padding: 250px 0px 0px 0px;
+    height: 264px;
+
+    &__img {
+      max-width: $layout-width-tablet + 80px;
+    }
   }
 }

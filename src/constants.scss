@@ -1,14 +1,6 @@
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 900px;
-$layout-width: 320px;
-$layout-width-tablet: 700px;
-$layout-width-desktop: 900px;
-$font-family-title: 'Lobster',
-cursive;
-$font-family: 'Alice',
-serif;
 $color-base1: #48160f;
 $color-base2: #7b4253;
+$color-base2_200: #795d61;
 $color-base3: #d5b2ca;
 $color-base3_200: #ffdae3;
 $color-base3_500: darken($color-base3_200, 10%);
@@ -27,3 +19,14 @@ $color-base6_500: #f9f9f9;
 $color-base7: #ffffff;
 $color-base8: #1ebea5;
 $color-base8_500: lighten($color-base8, 50%);
+$color-base9: #e7c6b2;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 900px;
+$layout-width: 320px;
+$layout-width-tablet: 700px;
+$layout-width-desktop: 900px;
+$font-family-title: 'Lobster',
+cursive;
+$font-family: 'IBM Plex Serif',
+serif;
+$font-color: $color-base2_200;

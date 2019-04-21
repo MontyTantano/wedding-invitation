@@ -8,7 +8,14 @@ const baseClass = 'contacts';
 const Contacts = () => (
   <div className={baseClass}>
     <div className={`${baseClass}__col ${baseClass}__col-first`}>
-      <div className={`${baseClass}-name`}>{texts.CONTACTS_PHONE_1_NAME}</div>
+      {/* <div className={`${baseClass}-name`}>{texts.CONTACTS_PHONE_1_NAME}</div> */}
+      <div className={`${baseClass}-name`}>
+        <img
+          className={`${baseClass}-name__img`}
+          src="assets/img/title_oleg.png"
+          alt="Заголовок контакта Олег"
+        />
+      </div>
       <a
         href={`tel:${texts.CONTACTS_PHONE_1}`}
         className={`${baseClass}-phone`}
@@ -16,7 +23,7 @@ const Contacts = () => (
       >
         {texts.CONTACTS_PHONE_1}
       </a>
-      <a
+      {/* <a
         href={`${texts.CONTACTS_PHONE_1_WHATSAPP_LINK}`}
         className={`${baseClass}-whatsapp`}
         target="_blanc"
@@ -26,10 +33,17 @@ const Contacts = () => (
           src="assets/img/whatsapp.png"
           alt="whatsapp logo"
         />
-      </a>
+      </a> */}
     </div>
     <div className={`${baseClass}__col ${baseClass}__col-second`}>
-      <div className={`${baseClass}-name`}>{texts.CONTACTS_PHONE_2_NAME}</div>
+      {/* <div className={`${baseClass}-name`}>{texts.CONTACTS_PHONE_2_NAME}</div> */}
+      <div className={`${baseClass}-name`}>
+        <img
+          className={`${baseClass}-name__img`}
+          src="assets/img/title_tania.png"
+          alt="Заголовок контакта Таня"
+        />
+      </div>
       <a
         href={`tel:${texts.CONTACTS_PHONE_2}`}
         className={`${baseClass}-phone`}
@@ -37,7 +51,7 @@ const Contacts = () => (
       >
         {texts.CONTACTS_PHONE_2}
       </a>
-      <a
+      {/* <a
         href={`${texts.CONTACTS_PHONE_2_WHATSAPP_LINK}`}
         className={`${baseClass}-whatsapp`}
         target="_blanc"
@@ -47,7 +61,7 @@ const Contacts = () => (
           src="assets/img/whatsapp.png"
           alt="whatsapp logo"
         />
-      </a>
+      </a> */}
     </div>
   </div>
 );

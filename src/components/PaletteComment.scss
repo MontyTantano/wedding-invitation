@@ -1,0 +1,31 @@
+$content-wrapper-title-height: 100px;
+
+.palette-comment {
+  overflow: hidden;
+  width: $layout-width;
+  height: $content-wrapper-title-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    position: relative;
+    height: $content-wrapper-title-height + 100px;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .palette-comment {
+    &__img {
+      height: $content-wrapper-title-height + 100px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .palette-comment {
+    &__img {
+      height: $content-wrapper-title-height + 160px;
+    }
+  }
+}

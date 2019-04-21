@@ -1,3 +1,14 @@
+export const TITLE_MAIN_IMG_URL = 'assets/img/title_main.png';
+export const TITLE_CONFIRMATION_IMG_URL = 'assets/img/title_confirmation.png';
+export const TITLE_CONTACTS_IMG_URL = 'assets/img/title_contacts.png';
+export const TITLE_DRESSCODE_IMG_URL = 'assets/img/title_dresscode.png';
+export const TITLE_DRESSCODE_COMMENT_IMG_URL =
+  'assets/img/title_dresscode_comment.png';
+export const TITLE_GIFTS_IMG_URL = 'assets/img/title_gifts.png';
+export const TITLE_INVITATION_IMG_URL = 'assets/img/title_invitation.png';
+export const TITLE_LOCATION_IMG_URL = 'assets/img/title_location.png';
+export const TITLE_OLEG_IMG_URL = 'assets/img/title_oleg.png';
+export const TITLE_TANIA_IMG_URL = 'assets/img/title_tania.png';
 export const GREETING_TEXTS = ['Свадьба', 'Олега и Татьяны'];
 export const BASE_TEXT_TITLE = 'Приглашение';
 export const BASE_TEXTS = [

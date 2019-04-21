@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { newid } from '../utils';
 import GreetingTextStyleIgnored from './GreetingText.scss';
 
-const GreetingText = ({ texts = [] }) => {
-  const rows = texts.map(text => (
-    <span key={newid('GreetingText')}>{text}</span>
-  ));
-  return <h1 className="greeting-text">{rows}</h1>;
-};
+const GreetingText = ({ url }) => (
+  <h1 className="greeting-text">
+    <img
+      className="greeting-text__img"
+      src={url}
+      alt="Свадьба Олег и Татьяна 10 мая 2019 года"
+    />
+  </h1>
+);
 
 GreetingText.defaultProps = {
-  texts: []
+  url: ''
 };
 
 GreetingText.propTypes = {
-  texts: PropTypes.arrayOf(PropTypes.string)
+  url: PropTypes.string
 };
 
 export default GreetingText;

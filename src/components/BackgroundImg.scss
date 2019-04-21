@@ -1,0 +1,220 @@
+.background-image {
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+
+  &-orientation-right {
+    justify-content: flex-end;
+  }
+
+  &-second {
+    top: 1150px;
+    height: 230px;
+  }
+
+  &-sixth {
+    top: 1060px;
+    height: 600px;
+  }
+
+  &-first {
+    top: 0;
+  }
+
+  &-third {
+    top: 2030px;
+  }
+
+  &-fourth {
+    top: 0;
+    z-index: -2;
+  }
+
+  &-fifth {
+    top: 30px;
+  }
+
+  &-seventh {
+    top: 1860px;
+    height: 400px;
+    z-index: -4;
+  }
+
+  &-eighth {
+    top: 3150px;
+    height: 230px;
+  }
+
+  &-eighth-left {
+    top: 2800px;
+    height: 600px;
+    z-index: -4;
+  }
+
+  &-last {
+    position: relative;
+    bottom: 0px;
+    z-index: -5;
+    width: 100%;
+    overflow: visible;
+  }
+
+  &__img {
+    width: 650px;
+
+    &-first {
+      margin-top: -230px;
+    }
+
+    &-second {
+      width: 450px;
+    }
+
+    &-third {
+      width: 450px;
+      margin-left: -60px;
+    }
+
+    &-fourth {
+      width: 100%;
+      margin-top: -20px;
+    }
+
+    &-fifth {
+      width: 450px;
+    }
+
+    &-sixth {
+      width: 450px;
+    }
+
+    &-seventh {
+      margin-left: -300px;
+      height: 400px;
+    }
+
+    &-eighth {
+      width: 450px;
+    }
+
+    &-eighth-left {
+      margin-left: -300px;
+      height: 600px;
+    }
+
+    &-last {
+      position: absolute;
+      bottom: 0px;
+      margin-bottom: -100px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .background-image {
+
+    &-fifth {
+      top: 150px;
+    }
+
+    &-second {
+      top: 1500px;
+      height: 450px;
+    }
+
+    &-sixth {
+      top: 1460px;
+      height: 750px;
+    }
+
+    &-third {
+      top: 2850px;
+    }
+
+    &-seventh {
+      top: 2700px;
+      height: 500px;
+    }
+
+    &-eighth {
+      top: 4020px;
+      height: 750px;
+    }
+
+    &-eighth-left {
+      top: 3900px;
+      height: 800px;
+    }
+
+    &__img {
+      width: 820px;
+
+      &-third {
+        margin-left: -50px;
+      }
+
+      &-fourth {
+        margin-top: -250px;
+        width: 100%;
+      }
+
+      &-sixth {
+        width: 650px;
+      }
+
+      &-seventh {
+        margin-left: -100px;
+        height: 500px;
+      }
+
+      &-eighth-left {
+        margin-left: -200px;
+        height: 800px;
+      }
+
+      &-last {
+        width: 450px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .background-image {
+    &-fifth {
+      top: 500px;
+      left: -40px;
+    }
+
+    &-seventh {
+      height: 600px;
+    }
+
+    &__img {
+      &-third {
+        margin-left: 0px;
+      }
+
+      &-fourth {
+        margin-top: -450px;
+        width: 100%;
+      }
+
+      &-fifth {
+        width: 600px;
+      }
+
+      &-seventh {
+        margin-left: -100px;
+        height: 600px;
+      }
+
+      &-last {
+        width: 850px;
+      }
+    }
+  }
+}
