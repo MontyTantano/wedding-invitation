@@ -533,7 +533,7 @@ export const Guests = {
   nefedovi: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Нефедов Константин',
@@ -586,7 +586,7 @@ export const Guests = {
   krestenchuk: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Крестенчук Валерий',
@@ -618,7 +618,7 @@ export const Guests = {
   kashinial: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Кашин Аркадий',
@@ -634,7 +634,7 @@ export const Guests = {
   kashinivn: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Кашин Владимир',
@@ -691,7 +691,7 @@ export const Guests = {
   babushka: {
     invitationText: 'Дорогая Бабушка!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Боговик Любовь',
@@ -837,7 +837,7 @@ export const Guests = {
   filatovaa: {
     invitationText: 'Дорогая Аня!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Филатова Анна',
@@ -847,7 +847,7 @@ export const Guests = {
   filatovimd: {
     invitationText: 'Дорогие Маша и Данил!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Филатова Мария',
