@@ -860,6 +860,27 @@ export const Guests = {
       ]
     }
   },
+  vdovchenko: {
+    invitationText: 'Дорогие Никита и Вика!',
+    form: {
+      isReceived: false,
+      isSended: false,
+      isValid: true,
+      fio: 'Вдовченко Никита',
+      items: [
+        {
+          fio: 'Вдовченко Вика',
+          isAdult: true,
+          id: '113'
+        },
+        {
+          fio: 'Вдовченко Вероника',
+          isAdult: false,
+          id: '101'
+        }
+      ]
+    }
+  },
   dmitrenko: {
     invitationText: 'Дорогие Женя и Галя!',
     form: {
