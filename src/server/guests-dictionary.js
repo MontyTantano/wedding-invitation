@@ -9,6 +9,16 @@ export const Guests = {
       items: []
     }
   },
+  babkinaolesya: {
+    invitationText: 'Дорогая Олеся!',
+    form: {
+      isReceived: false,
+      isSended: false,
+      isValid: true,
+      fio: 'Бабкина Олеся',
+      items: []
+    }
+  },
   family: {
     invitationText: 'Дорогая семья!',
     form: {
