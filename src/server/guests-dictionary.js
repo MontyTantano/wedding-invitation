@@ -58,7 +58,7 @@ export const Guests = {
   olya: {
     invitationText: 'Дорогая тётушка!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Данилова Ольга',
@@ -167,7 +167,7 @@ export const Guests = {
   repini: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Репина Елена',
@@ -214,7 +214,7 @@ export const Guests = {
   ritazhenya: {
     invitationText: 'Дорогие Маргарита и Евгений!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Чигрина Маргарита',
@@ -403,7 +403,7 @@ export const Guests = {
   darya: {
     invitationText: 'Дорогая Дарья!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Бурунина Дарья',
@@ -444,7 +444,7 @@ export const Guests = {
   inna: {
     invitationText: 'Дорогая Инна!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Гречка Инна',
@@ -454,7 +454,7 @@ export const Guests = {
   ediknina: {
     invitationText: 'Дорогие Эдик и Нина!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Евдокимов Эдуард',
@@ -506,7 +506,7 @@ export const Guests = {
   roditeli: {
     invitationText: 'Дорогие родители!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Боговик Евгений',
@@ -763,7 +763,7 @@ export const Guests = {
   sasha: {
     invitationText: '	Дорогие Саша и Аня!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Александр Калашников',
@@ -873,7 +873,7 @@ export const Guests = {
   vdovchenko: {
     invitationText: 'Дорогие Никита и Вика!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Вдовченко Никита',
