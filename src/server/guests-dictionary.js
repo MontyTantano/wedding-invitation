@@ -12,7 +12,7 @@ export const Guests = {
   babkinaolesya: {
     invitationText: 'Дорогая Олеся!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Бабкина Олеся',
@@ -157,7 +157,7 @@ export const Guests = {
   anyakamneva: {
     invitationText: 'Дорогая сестрёнка!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Камнева Анна',
@@ -198,7 +198,7 @@ export const Guests = {
   filimonovi: {
     invitationText: 'Дорогие Наташа и Катюша!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Филимонова Наталья',
@@ -675,7 +675,7 @@ export const Guests = {
   kashiniea: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Кашин Евгений',
@@ -731,7 +731,7 @@ export const Guests = {
   dimanastya: {
     invitationText: 'Дорогой Дима и Настя!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Котляров Дмитрий',
