@@ -789,7 +789,7 @@ export const Guests = {
   yura: {
     invitationText: 'Дорогой Юра!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Сойка Юрий',
