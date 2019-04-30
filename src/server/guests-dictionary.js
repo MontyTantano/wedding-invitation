@@ -110,7 +110,7 @@ export const Guests = {
   kamnevi: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Камнев Сергей',
@@ -251,7 +251,7 @@ export const Guests = {
   rizhenko: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Рыженко Сергей',
@@ -277,7 +277,7 @@ export const Guests = {
   tygolukovi: {
     invitationText: 'Дорогие родственники!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Туголуков Вадим',
@@ -480,7 +480,7 @@ export const Guests = {
   zhenyaolesia: {
     invitationText: 'Дорогие Женя и Олеся!',
     form: {
-      isReceived: false,
+      isReceived: true,
       isSended: false,
       isValid: true,
       fio: 'Шурупов Евгений',
